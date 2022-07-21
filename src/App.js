@@ -18,7 +18,9 @@ export class App extends Component {
         <InputForm
           onSubmit={(row) => {
             console.log(row);
-            this.state.rows.push(row);
+            this.setState({
+              rows: this.state.rows.concat(row),
+            });
           }}
         />
         <Table rows={this.state.rows} />

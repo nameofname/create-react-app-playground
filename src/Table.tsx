@@ -15,14 +15,12 @@ export class Table extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.rows.forEach((row, idx) => {
-            return (
-              <tr>
-                <td id={`name-${idx}`}>row.name</td>
-                <td id={`val-${idx}`}>row.name</td>
-              </tr>
-            );
-          })}
+          {this.props.rows.map((row, idx) => (
+            <tr>
+              <td id={`name-${idx}`}>{row.name}</td>
+              <td id={`val-${idx}`}>{row.val}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     );
