@@ -1,19 +1,28 @@
 // import logo from "./logo.svg";
-import { Fragment } from "react";
+import { Component, Fragment } from "react";
 import "./App.css";
-import { InputForm } from "./InputForm";
+import { InputForm } from "./InputForm.tsx";
+import { Table } from "./Table.tsx";
 
-function thisGuy() {
-  return <p>adf</p>;
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rows: [],
+    };
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <InputForm
+          onSubmit={(row) => {
+            console.log(row);
+            this.state.rows.push(row);
+          }}
+        />
+        <Table rows={this.state.rows} />
+      </Fragment>
+    );
+  }
 }
-
-function App() {
-  return (
-    <Fragment>
-      <InputForm />
-      (thisGuy())
-    </Fragment>
-  );
-}
-
-export default App;

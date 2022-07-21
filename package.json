@@ -6,12 +6,17 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.0.6",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
     "husky": "^5.0.8",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "typescript": "^4.7.4",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -21,6 +26,7 @@
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
+  "proxy": "https://local.intranet.1stdibs.com",
   "eslintConfig": {
     "extends": [
       "react-app",
