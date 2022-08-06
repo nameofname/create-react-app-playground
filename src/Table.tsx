@@ -1,10 +1,16 @@
 import { Component } from "react";
+import React from "react";
 
-export class Table extends Component {
-  constructor(props) {
-    super(props);
-  }
+type TableProps = {
+  rows: [
+    {
+      name: String;
+      val: String;
+    }
+  ];
+};
 
+export class Table extends Component<TableProps> {
   render() {
     return (
       <table>
@@ -15,7 +21,7 @@ export class Table extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.rows.map((row, idx) => (
+          {this.props?.rows.map((row, idx) => (
             <tr>
               <td id={`name-${idx}`}>{row.name}</td>
               <td id={`val-${idx}`}>{row.val}</td>
