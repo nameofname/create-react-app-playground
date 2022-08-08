@@ -1,16 +1,7 @@
 import { Component } from "react";
-import React from "react";
+import { TableAppState } from "./TableApp";
 
-type TableProps = {
-  rows: [
-    {
-      name: String;
-      val: String;
-    }
-  ];
-};
-
-export class Table extends Component<TableProps> {
+export class Table extends Component<TableAppState> {
   render() {
     return (
       <table>
