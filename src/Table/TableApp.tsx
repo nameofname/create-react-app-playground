@@ -1,5 +1,4 @@
-import React from "react";
-import { Component, Fragment } from "react";
+import { Component } from "react";
 import "./TableApp.css";
 import { InputForm } from "./InputForm";
 import { Table } from "./Table";
@@ -23,7 +22,7 @@ export class TableApp extends Component<any, TableAppState> {
 
   render() {
     return (
-      <Fragment>
+      <>
         <InputForm
           onSubmit={(row: TableAppRow) => {
             this.setState({
@@ -32,7 +31,7 @@ export class TableApp extends Component<any, TableAppState> {
           }}
         />
         <Table rows={this.state.rows} />
-      </Fragment>
+      </>
     );
   }
 }
