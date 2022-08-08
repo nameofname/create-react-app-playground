@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { TableApp } from "./TableApp.tsx";
+// import { TableApp } from "./Table/TableApp.tsx";
+import { CalculatorApp } from "./Calculator/CalculatorApp.tsx";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <TableApp />
+    <CalculatorApp />
   </React.StrictMode>
 );
 

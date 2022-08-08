@@ -3,7 +3,6 @@ import { Component, Fragment } from "react";
 import "./TableApp.css";
 import { InputForm } from "./InputForm";
 import { Table } from "./Table";
-import { AnyARecord } from "dns";
 
 type TableAppRow = {
   name: String;
