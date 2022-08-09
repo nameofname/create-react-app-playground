@@ -1,17 +1,23 @@
-// actions include clear, and +/-
-import { CalcCBProps, getDivValue } from "./CalculatorApp";
+type ActionCBProps = {
+  clearHandler: Function;
+  signHandler: Function;
+};
 
-export function Actions(props: CalcCBProps) {
-  function clickHandler(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    return getDivValue(e, props.clickHandler);
+export function Actions(props: ActionCBProps) {
+  function handleClearClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    e.stopPropagation();
+    props.clearHandler();
   }
-
+  function handleSignClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    e.stopPropagation();
+    props.signHandler();
+  }
   return (
     <>
-      <div onClick={clickHandler} className="key" id="clear">
+      <div onClick={handleClearClick} className="key" id="clear">
         C
       </div>
-      <div onClick={clickHandler} className="key" id="plusMinus">
+      <div onClick={handleSignClick} className="key" id="plusMinus">
         +/-
       </div>
     </>

@@ -20,28 +20,52 @@ export function getDivValue(
 }
 
 export function CalculatorApp() {
-  const [currValue, setCurrValue] = useState<Number>(0);
+  const [currValue, setCurrValue] = useState<String>("0");
   const [operand, setOperand] = useState<String>("");
   const [operator, setOperator] = useState<String>("");
+  const [writeToCurr, setWriteTo] = useState<Boolean>(true);
 
   function handleNumberClick(num: String) {
-    const newVal = `${operand}${num}`;
-    setOperand(newVal);
+    if (writeToCurr) {
+      setCurrValue(String(Number(`${currValue}${num}`)));
+    } else {
+      setOperand(String(Number(`${operand}${num}`)));
+    }
   }
 
   function handleOperatorClick(op: String) {
     setOperator(op);
+    setWriteTo(false);
   }
 
-  function handleActionClick(a: String) {
-    setCurrValue(Number(a)); // TODO !
+  function handleSignClick(sign: String) {
+    if (writeToCurr) {
+      if (currValue.slice(0, 1) === "-") {
+        setCurrValue(currValue.slice(1, currValue.length));
+      } else {
+        setCurrValue(String(Number(`-${currValue}`)));
+      }
+    } else {
+      if (operand.slice(0, 1) === "-") {
+        setOperand(operand.slice(1, operand.length));
+      } else {
+        setOperand(String(Number(`-${operand}`)));
+      }
+    }
+  }
+
+  function handleClearClick(a: String) {
+    setCurrValue("0");
+    setOperand("");
+    setOperator("");
+    setWriteTo(true);
   }
 
   function handleEqualsClick() {
-    // if (currValue && operand && operator)
     if (operand && operator) {
-      if (currValue !== 0)
-        setCurrValue(eval(`${currValue}${operator}${operand}`));
+      setCurrValue(eval(`${currValue}${operator}${operand}`));
+      setOperand("");
+      setOperator("");
     }
   }
 
@@ -52,7 +76,7 @@ export function CalculatorApp() {
         nextOperation={`${operator} ${operand}`}
         operand={operand}
       />
-      <Actions clickHandler={handleActionClick} />
+      <Actions signHandler={handleSignClick} clearHandler={handleClearClick} />
       <Numbers clickHandler={handleNumberClick} />
       <Operators
         clickHandler={handleOperatorClick}

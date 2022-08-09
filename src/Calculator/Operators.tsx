@@ -1,4 +1,3 @@
-// mathematical operators, and maybe the equals sign?
 import { CalcCBProps, getDivValue } from "./CalculatorApp";
 
 type OperatorProps = CalcCBProps & {
@@ -18,7 +17,7 @@ export function Operators(props: OperatorProps) {
         /
       </div>
       <div onClick={clickHandler} className="key c4 r3" id="multiply">
-        x
+        *
       </div>
       <div onClick={clickHandler} className="key c4 r4" id="subtract">
         -

@@ -1,4 +1,3 @@
-// the numbers, plus decimal for creating numbers
 import React from "react";
 import { CalcCBProps, getDivValue } from "./CalculatorApp";
 
