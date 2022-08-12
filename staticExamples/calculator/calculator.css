@@ -18,6 +18,12 @@
   grid-row: 1;
 }
 
+#display #displayRight {
+  grid-row: 1;
+  width: 100%;
+  text-align: right;
+}
+
 #plusMinus {
   grid-column: 2 / 4;
   grid-row: 2;
