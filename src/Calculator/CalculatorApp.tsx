@@ -19,6 +19,11 @@ export function getDivValue(
   cb(value);
 }
 
+function trimLeadingZeros(s: String) {
+  const sign = s.slice(0, 1) === "-" ? "-" : "";
+  return `${sign}${s.replace(sign, "").replace(/^0+/g, "")}`;
+}
+
 export function CalculatorApp() {
   const [currValue, setCurrValue] = useState<String>("0");
   const [operand, setOperand] = useState<String>("");
@@ -27,9 +32,9 @@ export function CalculatorApp() {
 
   function handleNumberClick(num: String) {
     if (writeToCurr) {
-      setCurrValue(String(Number(`${currValue}${num}`)));
+      setCurrValue(trimLeadingZeros(`${currValue}${num}`));
     } else {
-      setOperand(String(Number(`${operand}${num}`)));
+      setOperand(trimLeadingZeros(`${operand}${num}`));
     }
   }
 
@@ -43,13 +48,13 @@ export function CalculatorApp() {
       if (currValue.slice(0, 1) === "-") {
         setCurrValue(currValue.slice(1, currValue.length));
       } else {
-        setCurrValue(String(Number(`-${currValue}`)));
+        setCurrValue(trimLeadingZeros(`-${currValue}`));
       }
     } else {
       if (operand.slice(0, 1) === "-") {
         setOperand(operand.slice(1, operand.length));
       } else {
-        setOperand(String(Number(`-${operand}`)));
+        setOperand(trimLeadingZeros(`-${operand}`));
       }
     }
   }
