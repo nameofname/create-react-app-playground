@@ -1,0 +1,42 @@
+/* div {
+    border: 1px solid red;
+} */
+.root {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  width: 700px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.viewer {
+  border: 1px solie grey;
+  justify-content: center;
+  height: 300px;
+  display: flex;
+}
+
+/* .viewer img {
+    object-fit: contain;
+} */
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
+}
+
+.controls button {
+  display: block;
+  flex-basis: 5%;
+}
+
+.controls .title {
+  display: block;
+  flex-basis: 80%;
+  text-align: center;
+}

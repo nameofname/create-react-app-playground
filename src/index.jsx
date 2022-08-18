@@ -2,13 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 // import { TableApp } from "./table/TableApp.tsx";
-import { CalculatorApp } from "./calculator/CalculatorApp.tsx";
+// import { CalculatorApp } from "./calculator/CalculatorApp.tsx";
+import { CarouselApp } from "./carousel/CarouselApp.tsx";
+// import { DDCarouselApp } from './DDCarousel/DDCarouselApp';
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CalculatorApp />
+    <CarouselApp />
   </React.StrictMode>
 );
 
