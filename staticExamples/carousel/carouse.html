@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>carousel static example</title>
+        <script type="text/javascript" src="./dogapi.js"></script>
+        <script type="text/javascript" src="./carouse.js"></script>
+        <style>
+            body{ 
+                color: red;
+            }
+            div {
+                border: 1px solid grey;
+            }
+            .carousel {
+                display: flex;
+                justify-content: center;
+                width: 700px;
+                flex-wrap: wrap;
+            }
+            .viewer {
+                display: flex;
+                height: 400px;
+                flex: 1;
+                flex-basis: 95%;
+                justify-content: center;
+                /* align-content: center; */
+                /* align-items: center; */
+            }
+            .viewer-img {
+                object-fit: contain;
+            }
+            .controls {
+                flex: 1;
+                display: flex;
+                align-content: space-around;
+            }
+            .left, .right {
+                flex: 5;
+            }
+            .title {
+                flex: 90;
+                text-align: center;
+            }
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="carousel">
+            <div class="viewer">
+                <img class="viewer-img hidden" src="something" />
+                <span class="loading">loading...</span>
+            </div>
+            <div class="controls">
+                <button class="left"><</button>
+                <p class="title">stuff going onnnnnn yo.</p>
+                <button class="right">></button>
+            </div>
+        </div>
+    </body>
+</html>
