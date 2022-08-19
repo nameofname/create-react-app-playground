@@ -1,15 +1,14 @@
 import { useState } from "react";
 import styles from "./ticTacToe.module.css";
 
-type StTup = [string, string];
 type NTup = [number, number];
 type STrip = [string, string, string];
 
 type TileProps = {
   row: number;
   col: number;
-  mx: StTup[];
-  winners: NTup[];
+  mx: STrip[];
+  winners: string[] | undefined;
   onClick: Function;
 };
 
@@ -17,7 +16,7 @@ const Tile = (props: TileProps) => {
   const { mx, winners, onClick, row, col } = props;
   let text = mx[row][col];
 
-  if (winners[row][col]) text = "booya!";
+  if (winners && winners.includes(`${row}-${col}`)) text = "B!";
 
   return (
     <div className={styles.tile} onClick={() => onClick(row, col)}>
@@ -27,7 +26,6 @@ const Tile = (props: TileProps) => {
 };
 
 export const TicTacToeApp = () => {
-  // const mx: string[][] = new Array(3).fill(0).map(() => new Array(3).fill(''));
   const mx: STrip[] = [
     ["", "", ""],
     ["", "", ""],
@@ -35,20 +33,30 @@ export const TicTacToeApp = () => {
   ];
   const [matrix, updateMatrix] = useState<STrip[]>(mx);
   const [next, updateNext] = useState<string>("X");
-  const [winners, updateWinners] = useState<NTup[]>([]);
+  const [winners, updateWinners] = useState<string[] | undefined>();
 
   function checkRow(r: number) {
-    if (matrix[r][0] === matrix[r][1] && matrix[r][1] === matrix[r][2])
+    if (
+      matrix[r][0] !== "" &&
+      matrix[r][0] === matrix[r][1] &&
+      matrix[r][1] === matrix[r][2]
+    )
       return true;
     return false;
   }
+
   function checkCol(c: number) {
-    if (matrix[0][c] === matrix[1][c] && matrix[1][c] === matrix[2][c])
+    if (
+      matrix[0][c] !== "" &&
+      matrix[0][c] === matrix[1][c] &&
+      matrix[1][c] === matrix[2][c]
+    )
       return true;
     return false;
   }
-  function checkDiagonal(int: number) {
-    const ds = [
+
+  function checkDiagonal(int: number): string[] {
+    const ds: NTup[][] = [
       [
         [0, 0],
         [1, 1],
@@ -60,38 +68,35 @@ export const TicTacToeApp = () => {
         [2, 0],
       ],
     ];
-    const tup: number[][] = ds[int];
+    const tupArr: NTup[] = ds[int];
     if (
-      matrix[tup[0][0]][tup[0][1]] === matrix[tup[1][0]][tup[1][1]] &&
-      matrix[tup[1][0]][tup[1][1]] === matrix[tup[2][0]][tup[2][1]]
-    )
-      return tup;
+      matrix[tupArr[0][0]][tupArr[0][1]] !== "" &&
+      matrix[tupArr[0][0]][tupArr[0][1]] ===
+        matrix[tupArr[1][0]][tupArr[1][1]] &&
+      matrix[tupArr[1][0]][tupArr[1][1]] === matrix[tupArr[2][0]][tupArr[2][1]]
+    ) {
+      return tupArr.map((a) => `${a[0]}-${a[1]}`);
+    }
     return [];
   }
+
   function checkForWin() {
     for (let i = 0; i < 3; i++) {
       if (checkRow(i)) {
-        updateWinners([
-          [i, 0],
-          [i, 1],
-          [i, 2],
-        ]);
+        updateWinners([`${i}-0`, `${i}-1`, `${i}-2`]);
       } else if (checkCol(i)) {
-        updateWinners([
-          [0, i],
-          [1, i],
-          [2, i],
-        ]);
+        updateWinners([`0-${i}`, `1-${i}`, `2-${i}`]);
       }
       if (checkDiagonal(0).length) {
-        // update lla d1
+        updateWinners(checkDiagonal(0));
       } else if (checkDiagonal(1).length) {
-        // update
+        updateWinners(checkDiagonal(1));
       }
     }
   }
 
   function updateTile(row: number, col: number) {
+    if (winners) return;
     const currVal = matrix[row][col];
     if (currVal !== "") return;
     const copy = [...matrix];
@@ -117,5 +122,15 @@ export const TicTacToeApp = () => {
     }
   }
 
-  return <div className={styles.board}>{tiles}</div>;
+  function reset() {
+    updateWinners(undefined);
+    updateMatrix(mx);
+  }
+
+  return (
+    <div className={styles.board}>
+      {tiles}
+      <button onClick={reset}>reset</button>
+    </div>
+  );
 };
