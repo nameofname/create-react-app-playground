@@ -3,14 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 // import { TableApp } from "./table/TableApp.tsx";
 // import { CalculatorApp } from "./calculator/CalculatorApp.tsx";
-import { CarouselApp } from "./carousel/CarouselApp.tsx";
+// import { CarouselApp } from "./carousel/CarouselApp.tsx";
 // import { DDCarouselApp } from './DDCarousel/DDCarouselApp';
+import { TicTacToeApp } from "./ticTacToe/TicTacToeApp";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CarouselApp />
+    <TicTacToeApp />
   </React.StrictMode>
 );
 
