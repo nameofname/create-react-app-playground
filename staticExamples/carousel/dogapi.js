@@ -3,7 +3,7 @@
  * @param {number} length
  * @returns {Promise<Array<{ title: string, url:string }>}
  */
-function dogapi () {
+function dogapi() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([
@@ -19,7 +19,11 @@ function dogapi () {
           url: "https://cdn3.photostockeditor.com/t/1501/dog-chocolate-labrador-retriever-puppy-on-green-grass-puppy-puppy-image.jpg",
           title: "bitch ass bitches.",
         },
+        {
+          url: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          title: "got dem puppies.",
+        },
       ]);
     }, 500);
   });
-};
+}

@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>thumbnail carousel static example</title>
+    <style type="text/css">
+      div {
+        border: 1px solid gray;
+      }
+      .thumbCarousel {
+        display: flex;
+        flex-wrap: wrap;
+        width: 700px;
+      }
+      .viewer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        /* align-content: center;  ??? */
+        flex-basis: 100%;
+      }
+      .viewer img {
+        height: 90%;
+        object-fit: contain;
+      }
+      .thumbs {
+        display: flex;
+        flex-basis: 100%;
+        height: 100px;
+      }
+      .thumb {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+      }
+    </style>
+    <script type="text/javascript" src="../carousel/dogapi.js"></script>
+    <script type="text/javascript" src="./thumbCarousel.js"></script>
+  </head>
+  <body>
+    <div class="thumbCarousel">
+      <div class="viewer">Loading...</div>
+      <div class="thumbs"></div>
+    </div>
+  </body>
+</html>

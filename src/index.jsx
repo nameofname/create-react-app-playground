@@ -5,13 +5,14 @@ import "./index.css";
 // import { CalculatorApp } from "./calculator/CalculatorApp.tsx";
 // import { CarouselApp } from "./carousel/CarouselApp.tsx";
 // import { DDCarouselApp } from './DDCarousel/DDCarouselApp';
-import { TicTacToeApp } from "./ticTacToe/TicTacToeApp";
+// import { TicTacToeApp } from "./ticTacToe/TicTacToeApp";
+import { ThumbCarouselApp } from "./thumbCarousl/ThumbCarouselApp";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <TicTacToeApp />
+    <ThumbCarouselApp />
   </React.StrictMode>
 );
 
