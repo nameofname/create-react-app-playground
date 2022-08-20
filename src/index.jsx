@@ -6,13 +6,17 @@ import "./index.css";
 // import { CarouselApp } from "./carousel/CarouselApp.tsx";
 // import { DDCarouselApp } from './DDCarousel/DDCarouselApp';
 // import { TicTacToeApp } from "./ticTacToe/TicTacToeApp";
-import { ThumbCarouselApp } from "./thumbCarousl/ThumbCarouselApp";
+// import { ThumbCarouselApp } from "./thumbCarousl/ThumbCarouselApp";
+// import { PayWallApp } from "./paywall/PayWallApp";
+import { ContextExampleApp } from "./contextExample/ContextExampleApp";
+// import { ContextExampleApp } from "./contextExample/ContextExampleJ";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ThumbCarouselApp />
+    {/* <PayWallApp /> */}
+    <ContextExampleApp />
   </React.StrictMode>
 );
 
