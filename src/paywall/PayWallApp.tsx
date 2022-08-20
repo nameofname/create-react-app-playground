@@ -1,5 +1,5 @@
 import { FormEvent } from "react";
-import { FC } from "react";
+import { FC, useState } from "react";
 import styles from "./payWall.module.css";
 import { AuthProvider, AuthConsumer } from "./AuthContext";
 
@@ -45,6 +45,7 @@ const ProtectedArticle: FC = () => {
 const PayWall: FC = () => {
   let nameInput: HTMLInputElement | null;
   let pwInput: HTMLInputElement | null;
+  const [show, setShowing] = useState<boolean>(false);
 
   function update(e: FormEvent<HTMLFormElement>, callback: Function) {
     e.preventDefault();
@@ -53,10 +54,14 @@ const PayWall: FC = () => {
     callback({ userName: user, passWord: pw });
   }
 
+  setTimeout(() => {
+    setShowing(true);
+  }, 2000);
+
   return (
     <AuthConsumer>
       {({ credentials, updateCredentials }) => {
-        if (credentials.isValid) return "";
+        if (!show || credentials.isValid) return "";
         return (
           <div className={styles.paywall}>
             <p>Login to access this article and more :</p>
