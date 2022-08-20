@@ -91,6 +91,7 @@ const PayWall: FC = () => {
 
 // 12:00 - pause at 12:10 to read about react context
 // picking up at 4:37 after learning context
+// done at 5:50 ISH
 export const PayWallApp: FC = () => {
   return (
     <AuthProvider>
