@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: right;
+  border-bottom: 1px solid gray;
+}
+
+.article {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.paywall {
+  position: absolute;
+  width: 100%;
+  top: 41px;
+  bottom: 0px;
+  background-color: black;
+  opacity: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.blur {
+  filter: blur(4px);
+}
+
+.errorMessage {
+  color: red;
+}

@@ -14,7 +14,7 @@ export async function auth({
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
       if (m.get(userName) === passWord) resolve({ userName, passWord });
-      reject("Invalid username / password combination");
+      reject(new Error("Invalid username / password combination"));
     }, 300);
   });
 }
