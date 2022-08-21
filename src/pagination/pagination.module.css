@@ -1,0 +1,17 @@
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  height: 30px;
+}
+.pageLink {
+  flex-basis: 20px;
+}
+.article {
+  height: 200px;
+  overflow: scroll;
+  margin-bottom: 20px;
+}
+.pLink {
+  margin: 0px 4px;
+}

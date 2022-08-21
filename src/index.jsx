@@ -10,13 +10,14 @@ import "./index.css";
 // import { PayWallApp } from "./paywall/PayWallApp";
 // import { ContextExampleApp } from "./contextExample/ContextExampleApp";
 // import { ContextExampleApp } from "./contextExample/ContextExampleJ";
-import { DotCarouselApp } from "./dotCarousel/DotCarouselApp";
+// import { DotCarouselApp } from "./dotCarousel/DotCarouselApp";
+import { PaginationApp } from "./pagination/PaginationApp";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <DotCarouselApp />
+    <PaginationApp />
   </React.StrictMode>
 );
 
