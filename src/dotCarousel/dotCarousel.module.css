@@ -1,0 +1,48 @@
+.wrapper,
+.viewer,
+.dots {
+  border: 1px solid gray;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+}
+.viewer {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+}
+.viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  /* flex-basis: 90%; */
+  flex: 14;
+  object-fit: contain;
+}
+.dots {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-basis: 100%;
+}
+.dot {
+  background-color: gray;
+  width: 10px;
+  height: 10px;
+  margin: 10px;
+}
+.dot.on {
+  background-color: gold;
+}
+.left,
+.right {
+  font-size: 50px;
+  color: gray;
+  flex: 1;
+}
+.left {
+  flex: 1;
+}
