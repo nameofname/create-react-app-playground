@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./pagination.module.css";
 import { fetchPage, PaginationResponse } from "./api";
-// 12:15
+// 12:15 - 1:50 (includes building out api, wrapper, etc. )
 
 type PaginationProps = {
   pageCount: number;
