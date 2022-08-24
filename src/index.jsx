@@ -11,13 +11,14 @@ import "./index.css";
 // import { ContextExampleApp } from "./contextExample/ContextExampleApp";
 // import { ContextExampleApp } from "./contextExample/ContextExampleJ";
 // import { DotCarouselApp } from "./dotCarousel/DotCarouselApp";
-import { PaginationApp } from "./pagination/PaginationApp";
+// import { PaginationApp } from "./pagination/PaginationApp";
+import { TabApp } from "./tabs/TabApp";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <PaginationApp />
+    <TabApp />
   </React.StrictMode>
 );
 

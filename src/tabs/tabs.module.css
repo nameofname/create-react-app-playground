@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tabContainer {
+  display: flex;
+  flex-basis: 100%;
+  border-bottom: 1px solid gray;
+}
+.tab {
+  flex: 1;
+  max-width: 100px;
+  overflow: hidden;
+  border: 1px solid gray;
+  border-bottom: none;
+}
+.pageView {
+  flex-basis: 100%;
+  min-height: 400px;
+}
